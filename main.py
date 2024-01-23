@@ -17,7 +17,6 @@ def detect_faces(input_folder):
             for i, face_encoding in enumerate(face_encodings):
                 match = None
 
-                # Compara com rostos já conhecidos
                 for j, known_encoding in enumerate(known_encodings):
                     results_j = face_recognition.compare_faces([known_encoding], face_encoding)
                     if True in results_j:
@@ -45,11 +44,9 @@ def main():
 
     results = detect_faces(input_folder)
 
-    # Converte para JSON e exibe
     json_result = json.dumps(results, indent=4)
     print(json_result)
 
-    # Salva o JSON em um arquivo
     with open('output.json', 'w') as json_file:
         json_file.write(json_result)
 
