@@ -1,24 +1,49 @@
-O erro que você está enfrentando indica que há divergências entre os branches local e remoto, e o Git está pedindo para você especificar como deseja reconciliar essas diferenças.
+# Face Recognition Project
 
-A mensagem de erro fornece algumas sugestões sobre como lidar com isso. Você pode escolher uma das opções a seguir:
+This GitHub repository contains a Python script for face recognition using the `face_recognition` library. The script detects faces in images, crops and saves the faces as individual images, and generates a JSON file with information about the recognized faces.
 
-1. **Merge (Mesclagem - padrão):**
+## Getting Started
+
+To use this script, follow these steps:
+
+1. **Clone the Repository:**
    ```bash
-   git pull origin main --no-rebase
+   git clone https://github.com/your-username/face-recognition.git
+   cd face-recognition
    ```
 
-2. **Rebase:**
+2. **Install Dependencies:**
+   Make sure you have Python installed on your system. Install the required libraries using:
    ```bash
-   git pull origin main --rebase
+   pip install -r requirements.txt
    ```
 
-3. **Fast-forward only (Somente avanço rápido):**
+3. **Run the Script:**
    ```bash
-   git pull origin main --ff-only
+   python face_recognition_script.py
    ```
 
-Escolha a opção que melhor se adequa à sua preferência de fluxo de trabalho. Se você não tiver uma preferência específica, a opção padrão de mesclagem (`--no-rebase`) é geralmente adequada.
+## Usage
 
-Após escolher uma das opções acima, o Git deve realizar a operação de pull e reconciliar os branches local e remoto. Se houver conflitos, você precisará resolvê-los conforme solicitado pelo Git.
+- Place the images you want to process in a folder and update the `input_folder` variable in the script with the path to your folder.
 
-Depois de concluir essas etapas, você deve conseguir fazer um push para o repositório remoto.
+- The script will detect faces, crop them, save the cropped faces as individual images, and generate a JSON file (`output_otimizado.json`) with information about the recognized faces.
+
+## Dependencies
+
+- [face_recognition](https://github.com/ageitgey/face_recognition): A simple face recognition library.
+- [Pillow (PIL Fork)](https://pillow.readthedocs.io/en/stable/): A powerful image processing library.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or create a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- Special thanks to the authors of the `face_recognition` library for providing a simple and effective face recognition solution.
+
+Feel free to customize this README according to your project's specific details and requirements.
